@@ -1,0 +1,954 @@
+/*
+    Primeira versão:
+    Autor: Jungle
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    scroll-behavior: smooth;
+}
+
+/*======================================= Import Fonts - Jost and Roboto =======================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*======================================= Body / HTML =======================================*/
+/*======================================= Body - Font - Color =======================================*/
+:root {
+    --primary-color: #9D0208;
+    --dark-color: #0C1844;
+    --bg-color: #191f36;
+    --bg-gray: #e0fe4816;
+    --snd-bf-color: #262b40;
+    --text-color: #fff;
+    --main-color: #59b2f4;
+}
+
+body {
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+}
+
+/*======================================= Navbar =======================================*/
+/*======================================= Navbar text color =======================================*/
+img {
+    max-width: 100%;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--main-color);
+}
+
+.text-primary {
+    color: rgb(255, 0, 0) !important;
+    letter-spacing: 2px;
+}
+
+.easy-black {
+    letter-spacing: 1.5px;
+}
+
+.text-dark {
+    color: var(--primary-color);
+}
+
+/*======================================= Body / HTML =======================================*/
+/*======================================= Header / Navbar =======================================*/
+.mainHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    background: transparent;
+    transition: 0.3s background;
+}
+
+.mainHeader .navbar {
+    padding: 15px 0;
+}
+
+.mainHeader .navbar-nav>li {
+    padding: 0 10px;
+}
+
+.mainHeader .navbar-nav>li>.nav-link {
+    padding: 0 5px;
+    line-height: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--dark-color);
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.mainHeader .navbar-nav>li>.nav-link:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: ease all 0.3s;
+}
+
+.mainHeader .navbar-nav>li>.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.mainHeader .navbar-nav>li>.nav-link:hover:after {
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .mainHeader .navbar-collapse {
+        border-bottom: 2px solid var(--dark-color);
+        border-top: 2px solid var(--dark-color);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffffd3;
+    }
+
+    .mainHeader .navbar-nav>li+li {
+        border-top: 1px solid rgba(55, 55, 55, 0.1);
+    }
+
+    .mainHeader .navbar-nav>li>.nav-link {
+        line-height: 50px;
+    }
+
+    .mainHeader .navbar-nav>li>.nav-link::after {
+        display: none;
+    }
+
+    .mainHeader .navbar-toggler {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        padding: 4px 9px;
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+/*======================================= Header / Navbar =======================================*/
+/*======================================= Navbar color scroll =======================================*/
+.fixed-header .mainHeader {
+    background: #05113dde;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.fixed-header .easy-black,
+.fixed-header .mainHeader .navbar-nav>li>.nav-link {
+    color: rgba(255, 255, 255, 0.884);
+}
+
+.fixed-header .mainHeader .navbar-nav>li>.nav-link:after {
+    background: whitesmoke;
+}
+
+@media (max-width: 992px) {
+    .fixed-header .mainHeader .navbar-nav>li {
+        background: #0000007c;
+    }
+
+    .fixed-header .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+}
+
+/*======================================= Body / HTML =======================================*/
+/*======================================= Barra / Botão esquerdo =======================================*/
+.color-btn {
+    padding: 8px 20px;
+    border: 2px solid var(--primary-color);
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: ease all 0.3s;
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 6px 6px 0 -1px var(--dark-color);
+}
+
+.color-btn:hover {
+    color: yellow;
+    background: var(--dark-color);
+    border-color: var(--dark-color);
+    box-shadow: 5px 5px 0 -2px var(--primary-color);
+}
+
+/*======================================= /Navbar Button =======================================*/
+/*======================================= Home / Conteúdo principal =======================================*/
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.home-section {
+    position: relative;
+    overflow: hidden;
+    /*-- ok--*/
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+/*======================================= Conteúdo principal =======================================*/
+/*======================================= Padrões =======================================*/
+
+.home-section .container {
+    position: relative;
+    z-index: 1;
+    /*-- ok--*/
+}
+
+.home-image img {
+    height: 450px;
+    width: 450px;
+    object-fit: cover;
+    border-radius: 3%;
+    border: 2px solid black;
+    position: relative;
+    z-index: -2;
+}
+
+.home-section .home-intro h6 {
+    font-weight: 600;
+    color: var(--dark-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin: 0 0 30px;
+}
+
+.home-section .home-intro h1 {
+    font-size: 4.6rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 0 0 35px;
+    line-height: 1;
+}
+
+.home-section .home-intro p {
+    font-size: 1.3rem;
+}
+
+.home-section .home-intro h1 span {
+    border-bottom: 2px solid #fec448;
+}
+
+/*======================================= Imagem Tamanho Relativo =======================================*/
+@media (max-width: 576px) {
+    .home-image img {
+        height: 400px;
+        width: 400px;
+    }
+}
+
+@media (min-width: 767.98px) {
+    .home-image img {
+        height: 600px;
+        width: 600px;
+    }
+}
+
+@media (min-width: 991.98px) {
+    .home-image img {
+        height: 420px;
+        width: 420px;
+    }
+}
+
+@media (min-width: 1199.98px) {
+    .home-image img {
+        height: 490px;
+        width: 490px;
+    }
+}
+
+@media (min-width: 1399.98px) {
+    .home-image img {
+        height: 600px;
+        width: 600px;
+    }
+}
+
+/*======================================= Fonte Tamanho Relativo =======================================*/
+/*======================================= Fonte H6 =======================================*/
+@media (max-width: 767.98px) {
+    .home-section {
+        padding-bottom: 100px;
+        /*-- ok--*/
+    }
+}
+
+@media (max-width: 767.98px) {
+    .home-section .home-intro h6 {
+        margin: 0 0 20px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 991.98px) {
+    .home-section .home-intro h6 {
+        margin: 0 0 20px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1199.98px) {
+    .home-section .home-intro h6 {
+        margin: 0 0 20px;
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 1299.98px) {
+    .home-section .home-intro h6 {
+        margin: 0 0 20px;
+        font-size: 1.8rem;
+    }
+}
+
+/*======================================= Fonte H1 =======================================*/
+@media (max-width: 767.98px) {
+    .home-section .home-intro h1 {
+        margin: 0 0 25px;
+        font-size: 4.5rem;
+    }
+}
+
+@media (min-width: 991.98px) {
+    .home-section .home-intro h1 {
+        margin: 0 0 25px;
+        font-size: 3.85rem;
+    }
+}
+
+@media (min-width: 1199.98px) {
+    .home-section .home-intro h1 {
+        font-size: 4.65rem;
+    }
+}
+
+@media (min-width: 1399.98px) {
+    .home-section .home-intro h1 {
+        font-size: 5.4rem;
+    }
+}
+
+
+/*======================================= Fonte P =======================================*/
+
+@media (max-width: 768px) {
+    .home-section .home-intro p {
+        font-size: 1.3rem;
+    }
+}
+
+/*======================================= Body / HTML =======================================*/
+/*======================================= Animação - Conteúdo principal =======================================*/
+.anim-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.anim-elements .anim-element {
+    position: absolute;
+    font-size: 30px;
+}
+
+.anim-elements .anim-element:nth-child(1) {
+    top: 10%;
+    left: 25%;
+    color: orange;
+    animation: aniOne 10s infinite linear alternate;
+}
+
+.anim-elements .anim-element:nth-child(2) {
+    bottom: 15%;
+    left: 45%;
+    color: cornflowerblue;
+    animation: aniTwo 15s infinite linear alternate;
+}
+
+.anim-elements .anim-element:nth-child(3) {
+    bottom: 20%;
+    left: 50%;
+    color: cyan;
+    animation: aniThree 20s infinite linear alternate;
+}
+
+.anim-elements .anim-element:nth-child(4) {
+    bottom: 30%;
+    left: 65%;
+    color: darkseagreen;
+    animation: aniFour 20s infinite linear alternate;
+}
+
+.anim-elements .anim-element:nth-child(5) {
+    top: 15%;
+    left: 80%;
+    color: #333;
+    animation: aniFive 10s infinite linear alternate;
+}
+
+@keyframes aniOne {
+    0% {
+        transform: translate(0, 0) rotate(0);
+    }
+
+    40% {
+        transform: translate(141px, 72px) rotate(75deg);
+    }
+
+    80% {
+        transform: translate(-40px, 72px) rotate(145deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0);
+    }
+}
+
+@keyframes aniTwo {
+    0% {
+        transform: translate(0, 0) rotate(0) scale(1);
+    }
+
+    20% {
+        transform: translate(73px, -1px) rotate(36deg) scale(.9);
+    }
+
+    60% {
+        transform: translate(83px, 122px) rotate(108deg) scale(1.2);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0) scale(2);
+    }
+}
+
+@keyframes aniThree {
+    0% {
+        transform: translate(-300px, 151px) rotate(0);
+    }
+
+    60% {
+        transform: translate(83px, 122px) rotate(108deg) scale(1.1);
+    }
+
+    100% {
+        transform: translate(251px, -100px) scale(1);
+    }
+}
+
+@keyframes aniFour {
+    0% {
+        transform: translate(61px, -99px) rotate(0) scale(1.2);
+    }
+
+    40% {
+        transform: translate(4px, -199px) rotate(38deg) scale(1.2);
+    }
+
+    80% {
+        transform: translate(-263px, -164px) rotate(108deg) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-1, 0) rotate(180) scale(1.2);
+    }
+}
+
+@keyframes aniFive {
+    0% {
+        transform: translate(10px, 20px) rotate(0) scale(2);
+    }
+
+    40% {
+        transform: translate(-14px, -9x) rotate(75deg);
+    }
+
+    80% {
+        transform: translate(-35px, -72px) rotate(145deg);
+    }
+
+    100% {
+        transform: translate(200px, 150px) rotate(0) scale(2);
+    }
+}
+
+/*======================================= Carrossel =======================================*/
+/*======================================= Altura da imagem =======================================*/
+.c-item {
+    height: 500px;
+}
+
+/*======================================= Largura e filtros =======================================*/
+.c-img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+/*======================================= Cor da fonte na imagem =======================================*/
+.carousel-caption {
+    color: rgba(255, 255, 255, 0.877);
+}
+
+/*======================================= /Carrossel =======================================*/
+/*======================================= About me =======================================*/
+#about {
+    padding: 100px 0;
+    position: relative;
+}
+
+#medalha {
+    color: var(--primary-color);
+}
+
+/*======================================= Imagem Tamanho Relativo =======================================*/
+@media (max-width: 991.98px) {
+    .section {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .section {
+        padding: 80px 0;
+    }
+}
+
+/*======================================= /About me =======================================*/
+/*======================================= Section Services =======================================*/
+#services {
+    background-image: url(/imagens/Background/fundo-azul.jpg);
+    background-repeat: cover;
+}
+
+.section-heading {
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 991.98px) {
+    .section-heading {
+        padding-bottom: 40px;
+
+    }
+}
+
+@media (max-width: 767.98px) {
+    .section-heading {
+        padding-bottom: 30px;
+    }
+}
+
+.section-heading h3 {
+    font-size: 3.1rem;
+    margin: 0;
+    color: whitesmoke;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+    .section-heading h3 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .section-heading h3 {
+        font-size: 2.4rem;
+    }
+}
+
+/*======================================= Quadros Section Services =======================================*/
+/*======================================= Section Services =======================================*/
+
+.service {
+    background: var(--snd-bf-color);
+    min-height: 100vh;
+    padding: 7rem 9% 7rem;
+}
+
+
+.heading span {
+    color: var(--main-color);
+}
+
+.service h1 {
+    margin-bottom: 4rem;
+    color: var(--text-color);
+    font-size: 4rem;
+    text-align: center;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.service-container .service-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+
+}
+
+.service-box img {
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0.7;
+}
+
+.service-box:hover img {
+    transform: scale(1.3);
+}
+
+.service-box .service-Layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1.5rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.service-box:hover .service-Layer {
+    transform: translateY(0);
+}
+
+.service-Layer h4 {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.service-Layer p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0;
+}
+
+.service-Layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+.service-Layer a i {
+    font-size: 2rem;
+    color: var(--snd-bf-color);
+}
+
+
+/*======================================= Responsive Section Services =======================================*/
+
+@media (min-width: 991.98px) {
+    .service-Layer p {
+        font-size: 0.8rem;
+    }
+
+    .service-Layer h4 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .service {
+        padding-bottom: 7rem;
+    }
+
+    @media (max-width: 991.98px) {
+        .service-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .service-Layer h4 {
+        font-size: 1.5rem;
+    }
+
+    .service-Layer p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .service-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .service-Layer h4 {
+        font-size: 2rem;
+    }
+
+    .service-Layer p {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1199.98px) {
+    .service-Layer h4 {
+        font-size: 2rem;
+    }
+
+    .service-Layer p {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1299.98px) {
+    .service-Layer h4 {
+        font-size: 2.25rem;
+    }
+
+    .service-Layer p {
+        font-size: 1.2rem;
+    }
+}
+
+/*======================================= / Quadros Section Services =======================================*/
+/*======================================= Marcas - Logo =======================================*/
+#slideMarcas {
+    height: 230px;
+    background: #ffffff0b;
+}
+
+#canonLogo,
+#vaioLogo,
+#dellLogo,
+#konicaLogo,
+#kyoceraLogo {
+    height: 33px;
+    padding: 2px;
+    margin: 5px;
+}
+
+/*======================================= Marcas / Logo - Após Banner =======================================*/
+/*======================================= Efeito Shadow =======================================*/
+#canonLogo:hover,
+#vaioLogo:hover,
+#dellLogo:hover,
+#konicaLogo:hover,
+#kyoceraLogo:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3),
+        -3px -3px 3px rgba(0, 0, 0, 0.3);
+}
+
+/*======================================= /Marcas / Logo - Após Banner =======================================*/
+/*======================================= Clientes Section Services =======================================*/
+
+.clientes {
+    min-height: 75vh;
+    padding: 5rem 9% 5rem;
+    background-color: var(--bg-gray);
+    min-height: 100vh;
+    color: var(--dark-color);
+}
+
+.heading-clientes {
+    color: var(--text-color);
+    text-align: center;
+}
+
+.heading-clientes span {
+    color: var(--main-color);
+}
+
+.clientes h2 {
+    font-size: 4rem;
+}
+
+.clientes {
+    background-color: var(--bg-color);
+}
+
+.clientes-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 767.98px) {
+    .clientes-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.clientes-box {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-color);
+    margin: 1rem;
+}
+
+.workLink {
+    display: block;
+    position: relative;
+    background-color: var(--snd-bf-color);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    color: var(--text-color);
+    transition: transform .4s;
+}
+
+.workLink .title {
+    font-size: 2rem;
+    margin-bottom: 1.75rem;
+}
+
+.workLink p {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.workLink i {
+    position: absolute;
+    top: 1.8rem;
+    right: 1.5rem;
+    color: var(--main-color);
+    transition: transform .4s;
+    font-size: 1.5rem;
+}
+
+.workLink:hover {
+    transform: translateY(-.35rem);
+}
+
+.workLink:hover i {
+    transform: translateX(.5rem);
+}
+
+/*======================================= Contact =======================================*/
+/*======================================= e-mail =======================================*/
+
+#contact {
+    min-height: 75vh;
+    padding: 10rem 9% 2rem;
+    min-height: 100vh;
+}
+
+.contact h2 {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.contact-title span {
+    color: var(--main-color);
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+
+}
+
+.contact form .contact-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .contact-group input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    margin: .7rem 0;
+}
+
+.contact form .contact-group input {
+    width: 49%;
+}
+
+#contact-form textarea {
+    resize: none;
+}
+
+.contact form .btn {
+    margin: 2rem;
+    cursor: pointer;
+}
+
+.contact-input {
+    padding: 1.25rem;
+    background-color: var();
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.contact-message {
+    font-size: medium;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+/*======================================= Corpo Após Marcas - Logo =======================================*/
+/*======================================= Conteúdo =======================================*/
+#textoCorpo {
+    text-align: justify;
+}
+
+/*======================================= /Body / HTML =======================================*/
+/*======================================= Layout index =======================================*/
+
+
+/*======================================= /Body / HTML =======================================*/
+/*======================================= Rodapé =======================================*/
+.imgRodape {
+    height: 50px;
+}
+
+.bg-dark {
+    background-color: var(--dark-color) !important;
+}
