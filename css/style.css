@@ -548,7 +548,7 @@ main {
 /*======================================= /About me =======================================*/
 /*======================================= Section Services =======================================*/
 #services {
-    background-image: url(/img/Background/fundo-azul.jpg);
+    background-image: url(../img/Background/fundo-azul.jpg);
     background-repeat: cover;
 }
 
@@ -595,7 +595,6 @@ main {
 /*======================================= Section Services =======================================*/
 
 .service {
-    background: var(--snd-bf-color);
     min-height: 100vh;
     padding: 7rem 9% 7rem;
 }
