@@ -906,6 +906,7 @@ main {
 .form textarea {
     resize: none;
 }
+
 .contact-infos {
     margin: 0;
     padding: 0;
@@ -957,12 +958,14 @@ main {
         color: var(--main-color);
     }
 }
+
 .contact-infos .icon.whats {
     background-color: var(--bg-1);
+
     & a {
         font-size: 150%;
         color: #ece5dd;
-    } 
+    }
 }
 
 .contact-infos .icon.maps {
