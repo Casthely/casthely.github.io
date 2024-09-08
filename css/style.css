@@ -21,15 +21,18 @@
     --primary-color: #9D0208;
     --dark-color: #0C1844;
     --bg-color: #191f36;
-    --bg-gray: #e0fe4816;
+    --bg-gray: #f4fdc447;
     --snd-bf-color: #262b40;
     --text-color: #fff;
     --main-color: #59b2f4;
+    --text-dark: rgb(36, 36, 36);
+    --bg-1: #25d366;
 }
 
 body {
     font-family: "Jost", sans-serif;
     font-weight: 400;
+    background: var(--bg-gray);
 }
 
 /*======================================= Navbar =======================================*/
@@ -48,7 +51,7 @@ a:hover {
 }
 
 .text-primary {
-    color: rgb(255, 0, 0) !important;
+    color: var(--primary-color) !important;
     letter-spacing: 2px;
 }
 
@@ -56,9 +59,6 @@ a:hover {
     letter-spacing: 1.5px;
 }
 
-.text-dark {
-    color: var(--primary-color);
-}
 
 /*======================================= Body / HTML =======================================*/
 /*======================================= Header / Navbar =======================================*/
@@ -87,7 +87,7 @@ a:hover {
     text-transform: uppercase;
     font-size: 1rem;
     color: var(--dark-color);
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     position: relative;
 }
 
@@ -149,7 +149,7 @@ a:hover {
 /*======================================= Header / Navbar =======================================*/
 /*======================================= Navbar color scroll =======================================*/
 .fixed-header .mainHeader {
-    background: #05113dde;
+    background: #1b1b1bcd;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -165,7 +165,7 @@ a:hover {
 
 @media (max-width: 992px) {
     .fixed-header .mainHeader .navbar-nav>li {
-        background: #0000007c;
+        background: #1b1b1bcd;
     }
 
     .fixed-header .navbar-toggler-icon {
@@ -521,6 +521,14 @@ main {
     color: rgba(255, 255, 255, 0.877);
 }
 
+.carousel-caption a {
+    color: rgba(255, 255, 255, 0.877);
+
+    &:hover {
+        color: var(--main-color);
+    }
+}
+
 /*======================================= /Carrossel =======================================*/
 /*======================================= About me =======================================*/
 #about {
@@ -699,12 +707,13 @@ main {
     }
 }
 
-@media (max-width: 991.98px) {
+
+@media (max-width: 1199.98px) {
     .service {
         padding-bottom: 7rem;
     }
 
-    @media (max-width: 991.98px) {
+    @media (max-width: 1199.98px) {
         .service-container {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -789,7 +798,6 @@ main {
 .clientes {
     min-height: 75vh;
     padding: 5rem 9% 5rem;
-    background-color: var(--bg-gray);
     min-height: 100vh;
     color: var(--dark-color);
 }
@@ -868,69 +876,105 @@ main {
 /*======================================= Contact =======================================*/
 /*======================================= e-mail =======================================*/
 
-#contact {
-    min-height: 75vh;
-    padding: 10rem 9% 2rem;
-    min-height: 100vh;
+.form {
+    border: 2px solid var(--dark-color);
+    padding: 35px;
+    background: #fff;
+    height: 100%;
 }
 
-.contact h2 {
-    font-size: 4rem;
-    text-align: center;
-    color: var(--primary-color);
+.form h2 {
+    font-weight: 700;
 }
 
-.contact-title span {
-    color: var(--main-color);
+@media (max-width: 767.98px) {
+    .form {
+        padding: 25px;
+    }
 }
 
-.contact form {
-    max-width: 70rem;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3rem;
-
+.form .lead {
+    font-weight: 400;
+    font-size: 1.125rem;
+    margin: 0 0 30px;
 }
 
-.contact form .contact-group {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.form .contact-control {
+    padding: 0.575rem 0.75rem;
 }
 
-.contact form .contact-group input,
-.contact form textarea {
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    margin: .7rem 0;
-}
-
-.contact form .contact-group input {
-    width: 49%;
-}
-
-#contact-form textarea {
+.form textarea {
     resize: none;
 }
-
-.contact form .btn {
-    margin: 2rem;
-    cursor: pointer;
+.contact-infos {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.contact-input {
-    padding: 1.25rem;
-    background-color: var();
-    color: var(--primary-color);
-    font-weight: 600;
+.contact-infos li {
+    display: flex;
+    position: relative;
+    padding: 35px;
 }
 
-.contact-message {
-    font-size: medium;
-    font-weight: 600;
-    color: var(--main-color);
+.contact-infos li:last-child {
+    padding-bottom: 0;
 }
+
+.contact-infos .icon {
+    width: 55px;
+    height: 55px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-color);
+    font-size: 1.5rem;
+    background-color: var(--main-color);
+}
+
+.contact-infos h5 {
+    font-size: .85rem;
+    margin: 0 0 5px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.contact-infos p {
+    margin: 0;
+    font-size: .75rem;
+    color: #fff;
+    font-weight: 100;
+}
+
+.figure-caption {
+    color: white;
+    font-size: 75%;
+
+    & a {
+        color: var(--main-color);
+    }
+}
+.contact-infos .icon.whats {
+    background-color: var(--bg-1);
+    & a {
+        font-size: 150%;
+        color: #ece5dd;
+    } 
+}
+
+.contact-infos .icon.maps {
+    background-color: whitesmoke;
+}
+
+#contact-message {
+    font-size: .85rem;
+    height: 1rem;
+    width: 235px;
+}
+
 
 /*======================================= Corpo Após Marcas - Logo =======================================*/
 /*======================================= Conteúdo =======================================*/
@@ -946,8 +990,4 @@ main {
 /*======================================= Rodapé =======================================*/
 .imgRodape {
     height: 50px;
-}
-
-.bg-dark {
-    background-color: var(--dark-color) !important;
 }
