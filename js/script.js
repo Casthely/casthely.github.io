@@ -52,6 +52,7 @@ const validateEmail = (email) => {
 
 /*======================================= Envio do e-mail =======================================*/
 /*======================================= Envio do e-mail Funciona e-mail correto padrão=======================================*/
+
 const contactForm = document.getElementById('contact-form'),
     contactMessage = document.getElementById('contact-message')
 
@@ -80,4 +81,6 @@ const sendEmail = (e) => {
 }
 contactForm.addEventListener('submit', sendEmail)
 
+/*=======================================  =======================================*/
+/*=======================================  =======================================*/
 
