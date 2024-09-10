@@ -28,9 +28,12 @@ $(window).on('scroll', function () {
 
 $(document).ready(function () {
     new Typed('#type-it', {
-        strings: ['Easy!', 'Digital!'],
-        typeSpeed: 100,
-        loop: true
+        strings: ['Easy!!', 'Digital!'],
+        typeSpeed: 200,
+        loop: true,
+        fadeOut: true,
+        fadeOutClass: 'typed-fade-out',
+        fadeOutDelay: 500,
     });
 });
 
@@ -50,37 +53,44 @@ const validateEmail = (email) => {
     return regex.test(email);
 };
 
+/*======================================= Validar e-mail =======================================*/
 /*======================================= Envio do e-mail =======================================*/
-/*======================================= Envio do e-mail Funciona e-mail correto padrão=======================================*/
 
+const emailInput = document.querySelector('#user_email');
+const resultMessage = document.querySelector('#contact-message');
+const emailForm = document.querySelector('#contact-form');
 const contactForm = document.getElementById('contact-form'),
-    contactMessage = document.getElementById('contact-message')
+    contactMessage = document.getElementById('contact-message2');
 
-//Função enviar e-mail
-const sendEmail = (e) => {
-    e.preventDefault()
-    //serviceID - templateID - #form - publicKey
-    emailjs.sendForm('service_kbezpx8', 'template_41bv5wc', '#contact-form', '5jrs-CXFsaJQYjBvT')
-        .then(() => {
+emailForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-            //mostrar mensagem para usuário
-            contactMessage.textContent = 'Mensagem enviada com sucesso ✅'
-            contactMessage.style.color = "#91fe48";
+    const email = emailInput.value;
 
-            //remover mensagem após 5 segundos
-            setTimeout(() => {
-                contactMessage.textContent = ''
-            }, 5000)
+    const isValid = validateEmail(email);
 
-            //limpar formulário
-            contactForm.reset()
-        }, () => {
-            contactMessage.textContent = 'Mensagem não foi enviada ❌'
-            contactMessage.style.color = "#bb1515";
-        })
-}
-contactForm.addEventListener('submit', sendEmail)
+    if (isValid) {
 
-/*=======================================  =======================================*/
-/*=======================================  =======================================*/
+        emailjs.sendForm('service_kbezpx8', 'template_41bv5wc', '#contact-form', '5jrs-CXFsaJQYjBvT')
 
+        //mostrar mensagem para usuário
+        contactMessage.textContent = 'Mensagem enviada com sucesso ✅'
+        contactMessage.style.color = "#3d5902";
+
+        //remover mensagem após 5 segundos
+        setTimeout(() => {
+            contactMessage.textContent = ''
+        }, 5000)
+
+        //limpar formulário
+        contactForm.reset()
+
+    } else {
+        contactMessage.textContent = 'Mensagem não foi enviada ❌'
+        contactMessage.style.color = "#732002";
+        setTimeout(() => {
+            resultMessage.textContent = ''
+            contactMessage.textContent = ''
+        }, 5000)
+    }
+});
