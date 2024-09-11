@@ -18,10 +18,10 @@
 /*======================================= Body / HTML =======================================*/
 /*======================================= Body - Font - Color =======================================*/
 :root {
-    --primary-color: #9D0208;
-    --dark-color: #0C1844;
+    --primary-color: #cc0000e5;
+    --dark-color: #373737;
     --bg-color: #191f36;
-    --bg-gray: #f4fdc447;
+    --bg-gray: #fec4481a;
     --snd-bf-color: #262b40;
     --text-color: #fff;
     --main-color: #59b2f4;
@@ -32,7 +32,7 @@
 body {
     font-family: "Jost", sans-serif;
     font-weight: 400;
-    background: var(--bg-gray);
+    color: #555;
 }
 
 /*======================================= Navbar =======================================*/
@@ -47,7 +47,8 @@ a {
 }
 
 a:hover {
-    color: var(--main-color);
+    color: #CB612F;
+    text-decoration: none;
 }
 
 .text-primary {
@@ -55,9 +56,14 @@ a:hover {
     letter-spacing: 2px;
 }
 
+.text-dark {
+    color: var(--primary-color);
+}
+
 .easy-black {
     letter-spacing: 1.5px;
 }
+
 
 
 /*======================================= Body / HTML =======================================*/
@@ -74,6 +80,10 @@ a:hover {
 
 .mainHeader .navbar {
     padding: 15px 0;
+}
+
+.mainHeader .navbar-brand span {
+    color: var(--bg-2);
 }
 
 .mainHeader .navbar-nav>li {
@@ -100,7 +110,7 @@ a:hover {
     width: 0;
     height: 2px;
     background: var(--primary-color);
-    transition: ease all 0.3s;
+    transition: ease all 0.4s;
 }
 
 .mainHeader .navbar-nav>li>.nav-link:hover {
@@ -146,49 +156,34 @@ a:hover {
     }
 }
 
+
 /*======================================= Header / Navbar =======================================*/
 /*======================================= Navbar color scroll =======================================*/
 .fixed-header .mainHeader {
-    background: #1b1b1bcd;
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0.125rem 0.25rem rgba(55, 55, 55, 0.1);
 }
 
-.fixed-header .easy-black,
-.fixed-header .mainHeader .navbar-nav>li>.nav-link {
-    color: rgba(255, 255, 255, 0.884);
-}
 
-.fixed-header .mainHeader .navbar-nav>li>.nav-link:after {
-    background: whitesmoke;
-}
-
-@media (max-width: 992px) {
-    .fixed-header .mainHeader .navbar-nav>li {
-        background: #1b1b1bcd;
-    }
-
-    .fixed-header .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-}
 
 /*======================================= Body / HTML =======================================*/
 /*======================================= Barra / Botão esquerdo =======================================*/
 .color-btn {
     padding: 8px 20px;
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
     font-size: 16px;
     line-height: 1.5;
     text-decoration: none;
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
-    transition: ease all 0.3s;
+    transition: ease all 0.4s;
     display: inline-block;
     background: var(--primary-color);
     color: #fff;
-    box-shadow: 6px 6px 0 -1px var(--dark-color);
+    box-shadow: 5px 5px 0 -1px var(--dark-color);
 }
 
 .color-btn:hover {
@@ -196,6 +191,14 @@ a:hover {
     background: var(--dark-color);
     border-color: var(--dark-color);
     box-shadow: 5px 5px 0 -2px var(--primary-color);
+}
+
+.bg-gray {
+    background-color: var(--bg-gray);
+}
+
+.bg-dark {
+    background-color: var(--dark-color) !important;
 }
 
 /*======================================= /Navbar Button =======================================*/
@@ -208,7 +211,6 @@ main {
 .home-section {
     position: relative;
     overflow: hidden;
-    /*-- ok--*/
     padding-top: 150px;
     padding-bottom: 150px;
 }
@@ -219,14 +221,13 @@ main {
 .home-section .container {
     position: relative;
     z-index: 1;
-    /*-- ok--*/
 }
 
 .home-image img {
     height: 450px;
     width: 450px;
     object-fit: cover;
-    border-radius: 3%;
+    border-radius: 5%;
     border: 2px solid black;
     position: relative;
     z-index: -2;
@@ -265,12 +266,12 @@ main {
     }
 }
 
-@media (min-width: 767.98px) {
+/* @media (min-width: 767.98px) {
     .home-image img {
         height: 600px;
         width: 600px;
     }
-}
+} */
 
 @media (min-width: 991.98px) {
     .home-image img {
@@ -549,8 +550,16 @@ main {
 
 @media (max-width: 767.98px) {
     .section {
-        padding: 80px 0;
+        padding: 60px 0;
     }
+}
+
+.about-text p {
+    font-size: 1.30rem;
+}
+
+.text-bold span {
+    font-weight: 600;
 }
 
 /*======================================= /About me =======================================*/
@@ -867,6 +876,7 @@ main {
 
 .workLink:hover {
     transform: translateY(-.35rem);
+    color: var(--main-color);
 }
 
 .workLink:hover i {
@@ -975,24 +985,37 @@ main {
 #contact-message {
     font-size: .85rem;
     height: 1rem;
-    width: 224.5px;
-    text-align: center;
-    color: #ac0000;
+    width: 235px;
 }
 
+/*======================================= Footer =======================================*/
+/*=======================================  =======================================*/
 
-/*======================================= Corpo Após Marcas - Logo =======================================*/
-/*======================================= Conteúdo =======================================*/
-#textoCorpo {
-    text-align: justify;
+.footer {
+    background-color: var(--dark-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.75);
 }
 
-/*======================================= /Body / HTML =======================================*/
-/*======================================= Layout index =======================================*/
+.footer .nav a {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.75);
+}
 
+.footer .nav a:hover {
+    color: var(--main-color);
+}
 
-/*======================================= /Body / HTML =======================================*/
-/*======================================= Rodapé =======================================*/
-.imgRodape {
-    height: 50px;
+.footer .nav a + a {
+    margin-left: 1.125rem;
+}
+
+.easy-link {
+    color: white;
+
+    & a {
+        color: var(--main-color);
+    }
 }
