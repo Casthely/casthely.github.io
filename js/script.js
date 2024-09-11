@@ -60,7 +60,7 @@ const emailInput = document.querySelector('#user_email');
 const resultMessage = document.querySelector('#contact-message');
 const emailForm = document.querySelector('#contact-form');
 const contactForm = document.getElementById('contact-form'),
-    contactMessage = document.getElementById('contact-message2');
+    contactMessage = document.getElementById('contact-message');
 
 emailForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -86,10 +86,12 @@ emailForm.addEventListener("submit", function (event) {
         contactForm.reset()
 
     } else {
+
         contactMessage.textContent = 'Mensagem não foi enviada ❌'
         contactMessage.style.color = "#732002";
+
         setTimeout(() => {
-            resultMessage.textContent = ''
+
             contactMessage.textContent = ''
         }, 5000)
     }
