@@ -1008,7 +1008,7 @@ main {
     color: var(--main-color);
 }
 
-.footer .nav a + a {
+.footer .nav a+a {
     margin-left: 1.125rem;
 }
 
