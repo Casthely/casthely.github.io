@@ -975,7 +975,9 @@ main {
 #contact-message {
     font-size: .85rem;
     height: 1rem;
-    width: 235px;
+    width: 224.5px;
+    text-align: center;
+    color: #ac0000;
 }
 
 
