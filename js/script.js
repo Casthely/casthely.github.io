@@ -35,6 +35,10 @@ $(document).ready(function () {
         fadeOutClass: 'typed-fade-out',
         fadeOutDelay: 500,
     });
+    $.scrollIt({
+        easing: 'linear',      // the easing function for animation
+        topOffset: -70,           // offste (in px) for fixed top navigation
+      });
 });
 
 
@@ -42,7 +46,7 @@ $(document).ready(function () {
 /*======================================= Formulários =======================================*/
 
 $(document).ready(function () {
-    $('#user_phone').mask('(00) 0000-0000')
+    $('#user_phone').mask('(00) 0000-0000');
 });
 
 /*======================================= Função Validar E-Mail =======================================*/
