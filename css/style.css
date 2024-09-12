@@ -60,11 +60,6 @@ a:hover {
     color: var(--primary-color);
 }
 
-.easy-black {
-    letter-spacing: 1.5px;
-}
-
-
 
 /*======================================= Body / HTML =======================================*/
 /*======================================= Header / Navbar =======================================*/
@@ -97,7 +92,6 @@ a:hover {
     text-transform: uppercase;
     font-size: 1rem;
     color: var(--dark-color);
-    letter-spacing: 1.5px;
     position: relative;
 }
 
@@ -113,11 +107,13 @@ a:hover {
     transition: ease all 0.4s;
 }
 
-.mainHeader .navbar-nav>li>.nav-link:hover {
+.mainHeader .navbar-nav>li>.nav-link:hover,
+.mainHeader .navbar-nav>li>.nav-link.active:hover {
     color: var(--primary-color);
 }
 
-.mainHeader .navbar-nav>li>.nav-link:hover:after {
+.mainHeader .navbar-nav>li>.nav-link:hover:after,
+.mainHeader .navbar-nav>li>.nav-link.active:after {
     left: 0;
     right: auto;
     width: 100%;
@@ -131,7 +127,7 @@ a:hover {
         top: 100%;
         left: 0;
         right: 0;
-        background: #ffffffd3;
+        background: #ffffffb0;
     }
 
     .mainHeader .navbar-nav>li+li {
@@ -160,13 +156,11 @@ a:hover {
 /*======================================= Header / Navbar =======================================*/
 /*======================================= Navbar color scroll =======================================*/
 .fixed-header .mainHeader {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: #ffffffb0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 0.125rem 0.25rem rgba(55, 55, 55, 0.1);
 }
-
-
 
 /*======================================= Body / HTML =======================================*/
 /*======================================= Barra / Botão esquerdo =======================================*/
@@ -712,7 +706,11 @@ main {
     }
 
     .service-Layer h4 {
-        font-size: 1.8rem;
+        font-size: 3.5rem;
+    }
+
+    .service-Layer p {
+        font-size: 1.3rem;
     }
 }
 
@@ -745,11 +743,11 @@ main {
     }
 
     .service-Layer h4 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .service-Layer p {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -799,6 +797,7 @@ main {
 #kyoceraLogo:hover {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3),
         -3px -3px 3px rgba(0, 0, 0, 0.3);
+    transition: .8s ease;
 }
 
 /*======================================= /Marcas / Logo - Após Banner =======================================*/
@@ -852,7 +851,7 @@ main {
     background-color: var(--snd-bf-color);
     padding: 2rem 1.5rem 1.5rem 1.5rem;
     color: var(--text-color);
-    transition: transform .4s;
+    transition: transform .6s;
 }
 
 .workLink .title {
@@ -870,7 +869,7 @@ main {
     top: 1.8rem;
     right: 1.5rem;
     color: var(--main-color);
-    transition: transform .4s;
+    transition: transform .6s;
     font-size: 1.5rem;
 }
 
@@ -883,8 +882,15 @@ main {
     transform: translateX(.5rem);
 }
 
+/*======================================= END / Clientes Section Services =======================================*/
+/*======================================= texto =======================================*/
+
 /*======================================= Contact =======================================*/
 /*======================================= e-mail =======================================*/
+
+.p-5 {
+    padding: 5rem !important;
+}
 
 .form {
     border: 2px solid var(--dark-color);
@@ -1018,4 +1024,8 @@ main {
     & a {
         color: var(--main-color);
     }
+}
+
+.m-0 {
+    font-size: smaller;
 }
