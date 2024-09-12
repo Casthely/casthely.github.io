@@ -37,8 +37,7 @@ $(document).ready(function () {
         fadeOutDelay: 500,
     });
     $.scrollIt({
-        easing: 'linear',
-        topOffset: -70,
+
     });
 });
 
