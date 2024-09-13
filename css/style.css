@@ -564,7 +564,7 @@ main {
 }
 
 .section-heading {
-    padding: 20px;
+    padding: 45px;
     text-align: center;
 }
 
@@ -743,11 +743,11 @@ main {
     }
 
     .service-Layer h4 {
-        font-size: 2.7rem;
+        font-size: 2.3rem;
     }
 
     .service-Layer p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -884,6 +884,10 @@ main {
 
 /*======================================= END / Clientes Section Services =======================================*/
 /*======================================= texto =======================================*/
+
+#textoCorpo {
+    text-align: justify;
+}
 
 /*======================================= Contact =======================================*/
 /*======================================= e-mail =======================================*/
