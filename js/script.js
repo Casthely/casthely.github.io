@@ -23,25 +23,6 @@ $(window).on('scroll', function () {
     }
 });
 
-/*======================================= Animação - Efeito digitação =======================================*/
-/*======================================= Banner - Seja bem vindo =======================================*/
-
-$(document).ready(function () {
-    new Typed('#type-it', {
-        strings: ['Easy!!', 'Digital!'],
-        typeSpeed: 200,
-        backDelay: 1000,
-        loop: true,
-        fadeOut: true,
-        fadeOutClass: 'typed-fade-out',
-        fadeOutDelay: 500,
-    });
-    $.scrollIt({
-
-    });
-});
-
-
 /*======================================= Mascara de campos =======================================*/
 /*======================================= Formulários =======================================*/
 
@@ -105,16 +86,16 @@ emailForm.addEventListener("submit", function (event) {
 /*======================================= Scroll Section =======================================*/
 
 let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+let navLinks = document.querySelectorAll('header nav-item a');
 
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
-        let offste = sec.offsetTop - 150;
+        let offset = sec.offsetTop + 50;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if (top >= offste && top < offste + height) {
+        if (top >= offset && top < offset + height) {
             navLinks.forEach.apply(links => {
                 links.classList.remove('active');
                 document.querySelector('header nav a [href*=' + id + ']').classList.add('active');
@@ -143,3 +124,21 @@ ScrollReveal().reveal('.maria-serva', { origin: 'left' });
 ScrollReveal().reveal('.jaavm', { origin: 'right' });
 ScrollReveal().reveal('.sao-bras', { origin: 'right' });
 ScrollReveal().reveal('.tes-gestao', { origin: 'left' });
+
+/*======================================= Animação - Efeito digitação =======================================*/
+/*======================================= Banner - Seja bem vindo =======================================*/
+
+$(document).ready(function () {
+    new Typed('#type-it', {
+        strings: ['Easy!!', 'Digital!'],
+        typeSpeed: 200,
+        loop: true,
+        fadeOut: true,
+        fadeOutClass: 'typed-fade-out',
+        fadeOutDelay: 900,
+    });
+
+    $.scrollIt({
+
+    });
+});
